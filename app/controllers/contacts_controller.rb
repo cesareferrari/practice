@@ -6,6 +6,7 @@ class ContactsController < ApplicationController
   def create
     @contact = Contact.new(contact_params)
     if @contact.save
+      ContactMailer.new_contact_submission(@contact).deliver_now
       redirect_to contacts_url
     else
       flash[:alert] = "Contact not saved"
