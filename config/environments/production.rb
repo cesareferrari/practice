@@ -70,11 +70,11 @@ Rails.application.configure do
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    port: Rails.application.credentials[:mailgun][:port],
-    address: Rails.application.credentials[:mailgun][:address],
-    domain: Rails.application.credentials[:mailgun][:domain],
-    user_name: Rails.application.credentials[:mailgun][:user_name],
-    password: Rails.application.credentials[:mailgun][:password],
+    port: Rails.application.credentials.mailgun[:port],
+    address: Rails.application.credentials.mailgun[:address],
+    domain: Rails.application.credentials.mailgun[:domain],
+    user_name: Rails.application.credentials.mailgun[:user_name],
+    password: Rails.application.credentials.mailgun[:password],
     authentication: :plain
   }
 
